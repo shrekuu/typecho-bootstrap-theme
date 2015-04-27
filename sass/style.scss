@@ -1,28 +1,13 @@
+// nowrap text
 @mixin text-nowrap {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
-// use `open sans` as default English font
-@font-face {
-    font-family: 'Open Sans';
-    src: url(../fonts/OpenSans-Regular.ttf);
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    src: url(../fonts/OpenSans-Italic.ttf);
-    font-style: italic;
-    font-weight: normal;
-}
-
-// global font; mobile, pc, mac friendly
-// ref: http://ued.ctrip.com/blog/?p=3589
+// base font
 html, body, button, input, select, textarea {
-   font-family: 'Open Sans', Tahoma, Arial, Roboto, 'Droid Sans', 'Helvetica Neue', 'Droid Sans Fallback', 'Hiragino Sans GB', Simsun, sans-self;;
+   font-family: arial, "Microsoft Yahei", "Hiragino Sans GB", sans-serif;
 }
 
 // customize the scrollbar a little
