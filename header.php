@@ -30,6 +30,14 @@
 
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
+    <style>
+        /* override the font that is not within the theme but affects the theme
+         * copied from style.scss
+         */
+        html, body, button, input, select, textarea {
+            font-family: arial, "Microsoft Yahei", "Hiragino Sans GB", sans-serif;
+        }
+    </style>
 </head>
 <body>
 <!--[if lt IE 8]>
