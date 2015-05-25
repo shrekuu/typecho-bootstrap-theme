@@ -1,6 +1,5 @@
 # typecho-bootstrap-theme
-Basic bootstrap theme for typecho.
-Check out how it looks  [here](http://zhangyanzi.sinaapp.com/).
+Another basic bootstrap theme for typecho.
 
 ## screenshot
 
