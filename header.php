@@ -35,7 +35,8 @@
          * copied from style.scss
          */
         html, body, button, input, select, textarea {
-            font-family: arial, "Microsoft Yahei", "Hiragino Sans GB", sans-serif;
+            font-family: "Helvetica neue",Helvetica,Tahoma,"lantinghei sc", "Hiragino Sans GB","Microsoft Yahei", sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
     </style>
 </head>
