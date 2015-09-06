@@ -2,7 +2,7 @@
 
 Another simple responsive bootstrap theme for typecho.
 
-typecho 上的白色 bootstrap 自适应主题.
+typecho 上的白色 bootstrap 风格自适应主题.
 
 给专注于写作的你. :)
 
