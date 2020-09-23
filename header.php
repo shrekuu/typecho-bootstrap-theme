@@ -13,15 +13,11 @@
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
-    <!-- 使用url函数转换相关路径 -->
-    <link rel="stylesheet" href="http://cdn.staticfile.org/normalize/2.1.3/normalize.min.css">
+    <link href="https://cdn.staticfile.org/normalize/2.1.3/normalize.min.css" rel="stylesheet" >
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/bootstrap.min.css'); ?>">
+    <!-- 使用url函数转换相关路径 -->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
-    <script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -39,6 +35,9 @@
             -webkit-font-smoothing: antialiased;
         }
     </style>
+
+    <!-- 目测只能放这了 -->
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 8]>
