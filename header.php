@@ -73,13 +73,15 @@
                         </li>
                     <?php endwhile; ?>
                 </ul>
-                <form class="navbar-form navbar-right" role="search" method="post" action="./">
-                    <div class="input-group">
+                <form class="navbar-form navbar-right form-inline" role="search" method="post" action="./">
+                    <div class="form-group">
                         <label for="s" class="sr-only"><?php _e('搜索关键字'); ?></label>
-                        <input type="text" name="s" class="form-control" placeholder="<?php _e('输入关键字搜索'); ?>">
-                        <span class="input-group-btn">
-                            <button type="submit" class="submit btn btn-default" title="<?php _e('搜索'); ?>"><i class="glyphicon glyphicon-search"></i></button>
-                        </span>
+                        <div class="input-group">
+                            <input type="text" name="s" class="form-control" placeholder="<?php _e('输入关键字搜索'); ?>">
+                            <span class="input-group-btn">
+                                <button type="submit" class="submit btn btn-default" title="<?php _e('搜索'); ?>"><i class="glyphicon glyphicon-search"></i></button>
+                            </span>
+                        </div>
                     </div>
                 </form>
             </div><!-- /.navbar-collapse -->
