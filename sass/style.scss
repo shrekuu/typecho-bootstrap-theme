@@ -1,0 +1,430 @@
+// nowrap text
+@mixin text-nowrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+// base font
+// optimize Chinese font for mac users with low resolution screens :'(
+html, body, button, input, select, textarea {
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   -webkit-font-smoothing: antialiased;
+}
+
+// customize the scrollbar a little
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+// limit the max width of the page content
+@media (min-width: 992px) {
+    .container-fluid, .container {
+        max-width: 970px;
+    }
+}
+
+// pull nav search form right a little on tablet and above
+@media (min-width: 768px) {
+    #header .navbar-collapse {
+        padding-right: 0;
+    }
+}
+
+// boostrap style pagination
+.page-navigator {
+    list-style: none;
+    margin: 10px 0;
+    padding-left: 1px;
+    overflow: hidden;
+    li {
+        display: inline;
+        float: left;
+        a {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        span {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #999;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+    }
+    li.current a {
+        z-index: 2;
+        color: #fff;
+        cursor: default;
+        background-color: #337ab7;
+        border-color: #337ab7;
+    }
+    li:first-child a {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    li:last-child a {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+}
+
+// give article title a smaller font
+.post-title {
+    font-size: 20px;
+}
+@media (min-width: 992px) {
+    .post-title {
+        font-size: 22px;
+    }
+}
+
+// lighter post-meta
+.post-meta {
+    color: #888;
+}
+
+// give post content a little space
+.post-content {
+    margin: 20px 0;
+}
+
+// site footer
+#footer {
+    margin-top: 20px;
+    color: #777;
+    .container {
+        padding: 30px 0;
+        border-top: 1px solid #e7e7e7;
+    }
+}
+
+// lighter font color for breadcrumb
+#main .breadcrumb {
+    color: #777;
+    font-size: 13px;
+}
+
+// no new lines in the sidebar elements
+.widget-list li {
+    @include text-nowrap;
+}
+
+// link in widgets should be easier to click;
+// so make it a block add a light background on hover
+.widget-list li {
+    padding: 0;
+    a {
+        display: block;
+        padding: 10px 15px;
+        @include text-nowrap;
+    }
+    &.list-group-item {
+        a:hover {
+            background: #fcfcfc;
+        }
+    }
+}
+
+// remove link background in comment widgets
+.recent-comments li.list-group-item a:hover {
+    background: none;
+}
+
+// recent comment in sidebar
+.recent-comments .widget-list li {
+    padding: 10px 20px;
+    a {
+        display: inline;
+        padding: 0;
+    }
+}
+
+// beautify tags
+.post .tags {
+    a {
+        border: 1px solid #ddd;
+        background: #f5f5f5;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 13px;
+    }
+}
+
+// remove underline on post title
+.post-title a {
+    text-decoration: none;
+}
+
+// smaller comments title
+#comments {
+    &>h3 {
+        font-size: 18px;
+        color: #777;
+    }
+
+    // style of comment list
+    .comment-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #eee;
+            background: #fafafa;
+            border-radius: 4px;
+            overflow: hidden;
+            &.comment-level-odd {
+                background: #fff;
+            }
+            &.comment-level-even {
+                background: #fafafa;
+            }
+            &.comment-by-author {
+                position: relative;
+                &:after {
+                    content: "作者";
+                    display: block;
+                    position: absolute;
+                    width: 100px;
+                    right: -30px;
+                    top: 5px;
+                    padding: 2px 3px;
+                    color: white;
+                    font-size: 12px;
+                    text-align: center;
+                    background: rgba(0,0,0,.3);
+                    transform: rotate(30deg);
+                }
+            }
+            .comment-reply {
+                text-align: right;
+                font-size: .92857em;
+            }
+        }
+    }
+}
+
+// these are the same with default comment styling
+.comment-meta a {
+    color: #999;
+    font-size: .92857em;
+}
+
+.comment-author {
+    display: block;
+    margin-bottom: 3px;
+    color: #444;
+}
+
+.comment-author .avatar {
+    float: left;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.comment-author cite {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.comment-list .respond {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.respond {
+    &>h3 {
+        font-size: 18px;
+        color: #777;
+    }
+    .cancel-comment-reply {
+        float: right;
+        margin-top: 15px;
+        font-size: .92857em;
+    }
+}
+
+#comment-form {
+    .custom-input-group {
+        position: relative;
+        .input-group-addon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 6px 12px;
+            width: 38px;
+            line-height: 20px;
+            border-right: 1px solid #ccc;
+        }
+        .text {
+            text-indent: 40px;
+        }
+    }
+    .custom-input-group.has-error {
+        .input-group-addon {
+            border: 1px solid #a94442;
+        }
+    }
+    .custom-input-group-url {
+        float: left;
+        width: 100%;
+        .input-group-addon {
+            top: auto;
+            bottom: 0;
+        }
+        &.has-error {
+            .input-group-addon {
+                top: auto;
+                bottom: 30px;
+            }
+        }
+    }
+    .form-group {
+        label.error {
+            margin-top: 5px;
+            color: #a94442;
+            font-weight: normal;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #comment-form {
+        .form-group-inline {
+            width: 49%;
+            float: left;
+            &:nth-child(2) {
+                float: right;
+            }
+        }
+    }
+}
+
+// post near
+.post-near {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #888;
+    overflow: hidden;
+    li {
+        width: 100%;
+        padding: 0;
+        border-radius: 4px;
+        position: relative;
+        &:last-child {
+            background: rgba(0,0,0,.025);
+        }
+        &:hover {
+            background: rgba(0,0,0,.1);
+        }
+        a {
+            display: block;
+            font-size: 17px;
+            line-height: 50px;
+            padding: 0 30px 0 10px;
+            @include text-nowrap;
+        }
+        a:last-child {
+            padding: 0 10px 0 30px;
+        }
+        i {
+            position: absolute;
+            left: 10px;
+            top: 33%;
+
+        }
+        &:last-child {
+            i {
+                left: 100%;
+                margin-left: -25px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .post-near {
+        li {
+            width: 49.8%;
+            float: left;
+            &:last-child {
+                float: right;
+            }
+            a {
+                font-size: 20px;
+                line-height: 60px;
+                padding: 0 40px 0 20px;
+                &:last-child {
+                    padding: 0 20px 0 40px;
+                }
+            }
+            i {
+                top: 37%;
+                left: 20px;
+            }
+            &:last-child {
+                i {
+                    left: auto;
+                    right: 15px;
+                }
+            }
+        }
+    }
+}
+
+// fix image width in content
+.post-content, .comment-content {
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.post-content h2, .comment-content h2 {
+    font-size: 1.28571em;
+}
+
+.post-content img, .comment-content img, .post-content video, .comment-content video {
+    max-width: 100%;
+}
+
+.post-content a img, .comment-content a img {
+    background: #FFF;
+    position: relative;
+    bottom: -4px;
+}
+
+.post-content hr, .comment-content hr {
+    margin: 2em auto;
+    width: 100px;
+    border: 1px solid #E9E9E9;
+    border-width: 2px 0 0 0;
+}
+
+
+
+
